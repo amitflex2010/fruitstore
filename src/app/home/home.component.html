@@ -1,0 +1,39 @@
+<main>
+  <section class="banners">
+     <!--s <div>
+    <img src="/assets/images/fruits.jpeg" alt="Apples in a bunch" />
+    </div>
+    <div>
+      <img src="/assets/images/berry.jpeg" alt="A bunch of berries" />
+    </div>
+    <div>
+      <img src="/assets/images/banner-1.jpeg" alt="Slushy oranges" />
+    </div>
+    <div>
+      <img src="/assets/images/banner-2.jpeg" alt="A diverse set of fruits" />
+    </div>-->
+
+    <app-carousel 
+      [autoPlayDuration]="5000" 
+      animation="slide" 
+      [isNavigationVisible]="false" 
+      [isThumbnailsVisible]="false" 
+      [slides]="slides"
+      [slideTemplateRef]="slide">
+    </app-carousel>
+    <ng-template #slide let-slide>
+      <div [ngStyle]="{
+          'background-size': 'cover',
+          'background-image': 'url(' + slide.url + ')',
+          'background-repeat': 'no-repeat',
+          'width': '100%',
+          'height': '100%'
+        }">
+        
+      </div>
+    </ng-template>
+  </section>
+  <section class="product-area">
+    <app-product-list [fruits]="items"></app-product-list>
+  </section>
+</main>

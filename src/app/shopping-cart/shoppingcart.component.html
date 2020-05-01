@@ -1,0 +1,27 @@
+
+<header id="modal-header">
+    <h1 id="modal-title">Your Shopping Cart</h1>
+</header>
+<section style="padding-top: 5px;">
+    <div class="checkout" *ngFor="let product of items">
+        <div class="checkout-image-holder">
+             <img [src]="product.image" [alt]="product.name" class="checkout-image" width="75px" height="75px"  />
+        </div>
+        <div class="checkout-details">
+            <p class="checkout-details__name">{{ product.name }}</p>
+            <p class="checkout-details__price">${{ product.price }}</p>
+        </div>
+        <div>
+            <p class="checkout-details__quantity"><span>&#215;</span>&nbsp;&nbsp;&nbsp;&nbsp;{{ product.quantity }}</p>
+        </div>   
+    </div>
+</section>
+<footer id="modal-footer">
+    <button mat-raised-button id="modal-action-button" (click)="actionFunction()">
+        CheckOut
+    </button>
+    <button mat-raised-button id="modal-cancel-button" (click)="closeModal()">
+       Cancel
+    </button>
+    <span id="checkout-total">Total: ${{total | number : '1.2-2'}}</span>
+</footer>

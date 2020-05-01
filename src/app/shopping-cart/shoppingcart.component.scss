@@ -1,0 +1,143 @@
+%button {
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 32px;
+    width: 32px;
+    cursor: pointer;
+  
+    &:hover {
+      transform: scale(1.1);
+    }
+  
+    img {
+      width: 16px;
+      height: 16px;
+    }
+  }
+.checkout {
+    display: inline-flex;
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+    margin: 0 15px 30px 0;
+    width: 100%;
+    max-height: 400px;
+    height: auto;
+  
+    &:hover {
+      transform: scale(1);
+      border: 1px solid #35BADB;
+  
+      .checkout-actions {
+        display: flex;
+      }
+    }
+  
+    &-image {
+      max-width: 100%;
+      width: 75px;
+      padding: 8px;
+      border-top-right-radius: 5px;
+      border-top-left-radius: 5px;
+      height: 75px;
+      object-fit: cover;
+    }
+    &-details {
+      display: inline-grid;
+      justify-content: space-between;
+      padding: 8px 15px;
+  
+      &__price {
+        font-weight: 500;
+        opacity: 0.7;
+        letter-spacing: 1px;
+        margin: 0;
+       
+      }
+      &__quantity {
+        font-weight: 500;
+        opacity: 0.7;
+        letter-spacing: 1px;
+        margin: 0;
+        margin-top: 26px;
+        margin-left: 37px;
+      }
+  
+  
+      &__name {
+        opacity: 0.8;
+        font-weight: 500;
+        margin: 0;
+      }
+    }
+  
+    &-description {
+      padding: 10px 15px;
+  
+      p {
+        opacity: 0.6;
+        margin: 0;
+      }
+    }
+  
+    &-actions {
+      display: none;
+      justify-content: flex-end;
+      padding: 0 15px;
+  
+      &__add {
+        @extend %button;
+        border: 2px solid rgb(52, 186, 219);
+      }
+  
+      &__remove {
+        @extend %button;
+        border: 2px solid indianred;
+      }
+    }
+  }
+  #modal-footer { 
+    bottom: 9%;
+    width: 58%;
+    position: fixed;
+    border-top-style: outset;
+    background-color: white;
+    z-index: 999;
+    padding: 4px 4px 4px 0px;
+}
+#modal-header {
+    align-self: center; 
+    width: 100%;
+    position: relative;
+    border-bottom-style: outset;
+    background-color: white;
+    z-index: 999;
+    
+}
+
+#modal-title {
+    font-size: 22px;
+}
+#modal-action-button {
+    margin-right: 30px;
+    background-color:#3b3b3b;
+    color: white;
+    margin-right: 10px;
+    margin-top: 0px;
+    margin-bottom: 3px;
+    margin-left: 5px;
+}
+
+#modal-cancel-button {
+    background-color: #4e4e4e;
+    color: white;
+}
+#checkout-total {
+    font-size: 18px;
+    margin-top: 7px;
+    margin-right: 11px;
+    float: right; 
+    letter-spacing: 1px;
+}
+  
